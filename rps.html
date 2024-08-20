@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+   <script>
+    function play(Choice) 
+    {
+    const choices = ['rock', 'paper', 'scissors'];
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    let result = '';
+    if (Choice === computerChoice)
+    {
+        result = 'It\'s a tie!';
+    }
+     else if ( (Choice === 'rock' && computerChoice === 'scissors') ||
+        (Choice === 'paper' && computerChoice === 'rock') ||
+        (Choice === 'scissors' && computerChoice === 'paper')) 
+    {
+        result = 'You win!';
+    } 
+    else
+    {
+        result = 'You lose!';
+    }
+
+    document.getElementById('user-choice').textContent = `You chose: ${Choice}`;
+    document.getElementById('computer-choice').textContent = `Computer chose: ${computerChoice}`;
+    document.getElementById('outcome').textContent = result;
+}
+   </script>  
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-image: url('https://i0.wp.com/www.vampiretools.com/wp-content/uploads/2018/09/psr.jpg?fit=908%2C490&ssl=1');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h1 {
+    margin-top: 20px;
+    background-color: rgb(77, 196, 156);
+    color: aliceblue;
+    width: 20%;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+.buttons {
+    margin: 20px;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: aliceblue;
+    border: none;
+    border-radius: 10px;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#result p {
+    margin: 10px 0;
+}
+.whole
+{
+    background-color:rgb(244, 248, 248) ;
+    padding: 10px;
+    border-radius: 10px;
+    width: 1500px;
+    margin-left: 200px;
+    margin-top: 100px;
+    height: 300px;
+}
+</style>
+
+
+
+</head>
+<body>
+    <div class="whole">
+</body>
+ <center><div>
+    <h1>
+        Rock papper scissor
+    </h1>
+ </div></center>
+
+
+ <div class="buttons">
+    <button onclick="play('rock')">rock</button> 
+    <button onclick="play('papper')">papper</button>
+    <button onclick="play('scissors')">scissors</button>
+ </div>
+
+    <p id="user-choice"></p>
+    <p id="computer-choice"></p>
+    <p id="outcome"> </p>
+</div>
+</body>
+</body>
+</html>
